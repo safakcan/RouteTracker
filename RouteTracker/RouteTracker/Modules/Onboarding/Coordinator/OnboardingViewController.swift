@@ -28,22 +28,32 @@ final class OnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBindings()
+        self.setupBindings()
         customView.titleLabel.text = viewModel.welcomeText
         customView.descriptionLabel.text = viewModel.descriptionText
+
+        self.viewModel.requestPermission()
     }
 
     private func setupBindings() {
         viewModel.didUpdatePermissionStatus = { [weak self] status in
+            guard let self = self else { return }
             guard status == .authorized else { return }
             DispatchQueue.main.async {
-//                let mapVC = MapTrackingViewController()
-//                self?.present(mapVC, animated: true)
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+                      let window = windowScene.windows.first else {
+                    return
+                }
+
+                let mapVC = MapTrackingViewController()
+                window.rootViewController = mapVC
+                UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: {}, completion: nil)
+
             }
         }
 
         customView.onAllowTap = { [weak self] in
-            self?.viewModel.requestPermission()
+            guard let self = self else { return }
         }
     }
 }

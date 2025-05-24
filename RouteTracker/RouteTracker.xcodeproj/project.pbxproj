@@ -17,6 +17,9 @@
 		928D54372DE20AAE006F377E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D54362DE20AAE006F377E /* OnboardingViewController.swift */; };
 		928D54392DE222EB006F377E /* PermissionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D54382DE222EB006F377E /* PermissionServiceProtocol.swift */; };
 		928D543B2DE22303006F377E /* PermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D543A2DE22303006F377E /* PermissionService.swift */; };
+		92D26DB72DE26D2D00EF0236 /* MapTrackingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D26DB62DE26D2D00EF0236 /* MapTrackingView.xib */; };
+		92D26DB92DE26D3B00EF0236 /* MapTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DB82DE26D3B00EF0236 /* MapTrackingView.swift */; };
+		92D26DBB2DE2702000EF0236 /* MapTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DBA2DE2702000EF0236 /* MapTrackingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		928D54362DE20AAE006F377E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		928D54382DE222EB006F377E /* PermissionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionServiceProtocol.swift; sourceTree = "<group>"; };
 		928D543A2DE22303006F377E /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionService.swift; sourceTree = "<group>"; };
+		92D26DB62DE26D2D00EF0236 /* MapTrackingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTrackingView.xib; sourceTree = "<group>"; };
+		92D26DB82DE26D3B00EF0236 /* MapTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingView.swift; sourceTree = "<group>"; };
+		92D26DBA2DE2702000EF0236 /* MapTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +76,7 @@
 		928D54112DE205B4006F377E /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				92D26DBA2DE2702000EF0236 /* MapTrackingViewController.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -81,17 +88,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		928D54132DE205B4006F377E /* XIB */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = XIB;
-			sourceTree = "<group>";
-		};
 		928D54142DE205B4006F377E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				928D54132DE205B4006F377E /* XIB */,
+				92D26DB62DE26D2D00EF0236 /* MapTrackingView.xib */,
+				92D26DB82DE26D3B00EF0236 /* MapTrackingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -344,6 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92D26DB72DE26D2D00EF0236 /* MapTrackingView.xib in Resources */,
 				928D542E2DE205B4006F377E /* LaunchScreen.storyboard in Resources */,
 				928D54072DE202F5006F377E /* Assets.xcassets in Resources */,
 				928D54312DE209DC006F377E /* OnboardingView.xib in Resources */,
@@ -361,6 +363,8 @@
 				928D53FE2DE202F4006F377E /* AppDelegate.swift in Sources */,
 				928D54392DE222EB006F377E /* PermissionServiceProtocol.swift in Sources */,
 				928D543B2DE22303006F377E /* PermissionService.swift in Sources */,
+				92D26DBB2DE2702000EF0236 /* MapTrackingViewController.swift in Sources */,
+				92D26DB92DE26D3B00EF0236 /* MapTrackingView.swift in Sources */,
 				928D54372DE20AAE006F377E /* OnboardingViewController.swift in Sources */,
 				928D54002DE202F4006F377E /* SceneDelegate.swift in Sources */,
 				928D54352DE20A85006F377E /* OnboardingViewModel.swift in Sources */,
