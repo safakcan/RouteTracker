@@ -19,5 +19,10 @@
 			</array>
 		</dict>
 	</dict>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to track your route while the app is in use.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We need your location to track your route in the background as well.</string>
+
 </dict>
 </plist>

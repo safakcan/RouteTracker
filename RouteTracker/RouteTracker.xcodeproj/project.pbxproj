@@ -15,6 +15,8 @@
 		928D54332DE20A47006F377E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D54322DE20A47006F377E /* OnboardingView.swift */; };
 		928D54352DE20A85006F377E /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D54342DE20A85006F377E /* OnboardingViewModel.swift */; };
 		928D54372DE20AAE006F377E /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D54362DE20AAE006F377E /* OnboardingViewController.swift */; };
+		928D54392DE222EB006F377E /* PermissionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D54382DE222EB006F377E /* PermissionServiceProtocol.swift */; };
+		928D543B2DE22303006F377E /* PermissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928D543A2DE22303006F377E /* PermissionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		928D54322DE20A47006F377E /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		928D54342DE20A85006F377E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		928D54362DE20AAE006F377E /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		928D54382DE222EB006F377E /* PermissionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionServiceProtocol.swift; sourceTree = "<group>"; };
+		928D543A2DE22303006F377E /* PermissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +205,8 @@
 		928D54242DE205B4006F377E /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				928D54382DE222EB006F377E /* PermissionServiceProtocol.swift */,
+				928D543A2DE22303006F377E /* PermissionService.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -353,6 +359,8 @@
 			files = (
 				928D54332DE20A47006F377E /* OnboardingView.swift in Sources */,
 				928D53FE2DE202F4006F377E /* AppDelegate.swift in Sources */,
+				928D54392DE222EB006F377E /* PermissionServiceProtocol.swift in Sources */,
+				928D543B2DE22303006F377E /* PermissionService.swift in Sources */,
 				928D54372DE20AAE006F377E /* OnboardingViewController.swift in Sources */,
 				928D54002DE202F4006F377E /* SceneDelegate.swift in Sources */,
 				928D54352DE20A85006F377E /* OnboardingViewModel.swift in Sources */,
