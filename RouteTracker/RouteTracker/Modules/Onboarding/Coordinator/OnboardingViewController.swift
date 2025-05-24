@@ -7,10 +7,11 @@
 
 import UIKit
 
-final class OnboardingViewController: UIViewController {
+import UIKit
 
+final class OnboardingViewController: UIViewController {
+    private var viewModel: OnboardingViewModelProtocol
     private let customView = OnboardingView()
-    private let viewModel: OnboardingViewModelProtocol
 
     init(viewModel: OnboardingViewModelProtocol) {
         self.viewModel = viewModel
@@ -22,11 +23,28 @@ final class OnboardingViewController: UIViewController {
     }
 
     override func loadView() {
-        self.view = customView
+        view = customView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBindings()
         customView.titleLabel.text = viewModel.welcomeText
+        customView.descriptionLabel.text = viewModel.descriptionText
+    }
+
+    private func setupBindings() {
+        viewModel.didUpdatePermissionStatus = { [weak self] status in
+            guard status == .authorized else { return }
+            DispatchQueue.main.async {
+//                let mapVC = MapTrackingViewController()
+//                self?.present(mapVC, animated: true)
+            }
+        }
+
+        customView.onAllowTap = { [weak self] in
+            self?.viewModel.requestPermission()
+        }
     }
 }
+

@@ -16,7 +16,9 @@ enum LocationPermissionStatus {
 
 protocol PermissionServiceProtocol {
     var status: LocationPermissionStatus { get }
-    func requestAuthorization()
+    func requestWhenInUseAuthorization()
+    func requestAlwaysAuthorization()
     var didChangeStatus: ((LocationPermissionStatus) -> Void)? { get set }
 }
+
 

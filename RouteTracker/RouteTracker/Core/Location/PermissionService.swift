@@ -19,39 +19,42 @@ final class PermissionService: NSObject, PermissionServiceProtocol {
 
     var status: LocationPermissionStatus {
         switch locationManager.authorizationStatus {
-        case .notDetermined:
-            return .notDetermined
-        case .authorizedAlways:
-            return .authorized
-        case .authorizedWhenInUse:
-            return .authorized
-        case .denied, .restricted:
-            return .denied
-        @unknown default:
-            return .denied
+        case .notDetermined: return .notDetermined
+        case .authorizedWhenInUse: return .authorized
+        case .authorizedAlways: return .authorized
+        case .denied, .restricted: return .denied
+        @unknown default: return .denied
         }
     }
 
-    func requestAuthorization() {
-        switch locationManager.authorizationStatus {
-        case .notDetermined:
-            locationManager.requestWhenInUseAuthorization()
+    func requestWhenInUseAuthorization() {
+        locationManager.requestWhenInUseAuthorization()
+    }
 
-        case .authorizedWhenInUse:
-            locationManager.requestAlwaysAuthorization()
-
-        default:
-            break
-        }
+    func requestAlwaysAuthorization() {
+        locationManager.requestAlwaysAuthorization()
     }
 }
+
 
 extension PermissionService: CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        didChangeStatus?(status)
+        let currentStatus = status
+        didChangeStatus?(currentStatus)
 
         if manager.authorizationStatus == .authorizedWhenInUse {
+            print("Requesting Always Authorization")
             locationManager.requestAlwaysAuthorization()
+
+            locationManager.startUpdatingLocation()
+            locationManager.distanceFilter = 100
+        }
+
+        if manager.authorizationStatus == .authorizedAlways {
+            print("✅ Always Granted — stopping location updates")
+            locationManager.stopUpdatingLocation()
         }
     }
+
 }
+
