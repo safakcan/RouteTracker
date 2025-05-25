@@ -12,6 +12,7 @@ protocol OnboardingViewModelProtocol {
     var welcomeText: String { get }
     var descriptionText: String { get }
     var didUpdatePermissionStatus: ((LocationPermissionStatus) -> Void)? { get set }
+    var permissionStatus: LocationPermissionStatus { get }
     func requestPermission()
 }
 
@@ -24,6 +25,10 @@ final class OnboardingViewModel: OnboardingViewModelProtocol {
         self.permissionService.didChangeStatus = { [weak self] status in
             self?.didUpdatePermissionStatus?(status)
         }
+    }
+
+    var permissionStatus: LocationPermissionStatus {
+        return permissionService.status
     }
 
     var welcomeText: String {
