@@ -27,5 +27,12 @@
 	</array>
     <key>UIUserInterfaceStyle</key>
     <string>Light</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>We need your location to track your activity.</string>
+
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>We need your location to provide full tracking features even when the app is in the background.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>We need your location even when the app is not active.</string>
 </dict>
 </plist>

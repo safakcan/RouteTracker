@@ -37,7 +37,7 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
     private let persistence: PersistenceManagerProtocol
 
     // MARK: - State
-    private var isTracking = false
+    private var isTracking = true
     private var lastRecordedLocation: CLLocation?
     private var trackedLocations: [CLLocationCoordinate2D] = []
 

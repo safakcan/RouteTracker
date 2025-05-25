@@ -31,8 +31,6 @@ final class OnboardingViewController: UIViewController {
         self.setupBindings()
         customView.titleLabel.text = viewModel.welcomeText
         customView.descriptionLabel.text = viewModel.descriptionText
-
-        self.viewModel.requestPermission()
     }
 
     private func setupBindings() {
@@ -61,6 +59,7 @@ final class OnboardingViewController: UIViewController {
 
         customView.onAllowTap = { [weak self] in
             guard let self = self else { return }
+            self.viewModel.requestPermission()
         }
     }
 }
