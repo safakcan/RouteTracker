@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapTrackingView">
             <connections>
+                <outlet property="centerUserButton" destination="OgL-S4-7xt" id="FFf-jv-lq8"/>
                 <outlet property="deleteButton" destination="Lr7-ig-2xE" id="uFp-4U-LCE"/>
                 <outlet property="mapView" destination="i9a-L8-6dP" id="dcZ-rk-mpK"/>
                 <outlet property="startButton" destination="tJh-Wu-nNS" id="eQZ-4h-rtr"/>
@@ -23,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-L8-6dP" customClass="MKMapView">
-                    <rect key="frame" x="5" y="179" width="383" height="673"/>
+                    <rect key="frame" x="5" y="159" width="383" height="693"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -32,7 +33,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJh-Wu-nNS">
-                    <rect key="frame" x="5.0000000000000036" y="139" width="61.333333333333343" height="35"/>
+                    <rect key="frame" x="5.0000000000000036" y="119" width="61.333333333333343" height="35"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
@@ -42,11 +43,11 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lr7-ig-2xE">
-                    <rect key="frame" x="335.33333333333331" y="139.66666666666666" width="52.666666666666686" height="34.333333333333343"/>
+                    <rect key="frame" x="335.33333333333331" y="119.66666666666667" width="52.666666666666686" height="34.333333333333329"/>
                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system" title="."/>
+                    <buttonConfiguration key="configuration" style="plain" image="trash" catalog="system" title=" "/>
                     <connections>
                         <action selector="deleteTapped:" destination="-1" eventType="touchUpInside" id="IVg-BT-hcQ"/>
                     </connections>
@@ -57,16 +58,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OgL-S4-7xt">
+                    <rect key="frame" x="184.66666666666666" y="137" width="24" height="14"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain"/>
+                    <connections>
+                        <action selector="centerUserTapped:" destination="-1" eventType="touchUpInside" id="lDQ-Hm-W5b"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i9a-L8-6dP" secondAttribute="trailing" constant="5" id="45d-C5-WTk"/>
-                <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="120" id="ALw-yU-GFB"/>
+                <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="100" id="ALw-yU-GFB"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hpq-IF-Wd2" secondAttribute="trailing" constant="32" id="CBZ-Tm-1QU"/>
+                <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="OgL-S4-7xt" secondAttribute="bottom" constant="8" id="Dsq-AJ-2bv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hpq-IF-Wd2" secondAttribute="bottom" constant="50" id="IVJ-LP-az1"/>
                 <constraint firstItem="Hpq-IF-Wd2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KlT-vg-nxs"/>
                 <constraint firstItem="i9a-L8-6dP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="OBT-yx-DcS"/>
+                <constraint firstItem="OgL-S4-7xt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="PbB-mN-dtH"/>
                 <constraint firstAttribute="bottom" secondItem="i9a-L8-6dP" secondAttribute="bottom" id="QGO-pR-qez"/>
                 <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="Lr7-ig-2xE" secondAttribute="bottom" constant="5" id="TQQ-a5-aJX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lr7-ig-2xE" secondAttribute="trailing" constant="5" id="acx-aC-D5w"/>

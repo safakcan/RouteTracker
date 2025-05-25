@@ -133,13 +133,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		928D54182DE205B4006F377E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		928D54192DE205B4006F377E /* XIB */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				928D54172DE205B4006F377E /* Coordinator */,
-				928D54182DE205B4006F377E /* Model */,
 				928D541A2DE205B4006F377E /* View */,
 				928D541B2DE205B4006F377E /* ViewModel */,
 			);
@@ -224,13 +216,6 @@
 			path = Permission;
 			sourceTree = "<group>";
 		};
-		928D54252DE205B4006F377E /* Networking */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Networking;
-			sourceTree = "<group>";
-		};
 		928D54262DE205B4006F377E /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,7 +231,6 @@
 				92D26DBC2DE284E300EF0236 /* Location */,
 				928D54232DE205B4006F377E /* Geocoding */,
 				928D54242DE205B4006F377E /* Permission */,
-				928D54252DE205B4006F377E /* Networking */,
 				928D54262DE205B4006F377E /* Storage */,
 			);
 			name = Core;

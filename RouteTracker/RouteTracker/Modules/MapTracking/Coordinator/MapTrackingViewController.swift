@@ -31,6 +31,7 @@ final class MapTrackingViewController: UIViewController {
         bindViewModel()
         customView.mapView.delegate = self
         updateTrackingUI()
+        viewModel.restorePersistedPins()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -91,6 +92,11 @@ final class MapTrackingViewController: UIViewController {
             self.viewModel.deleteAllPins()
             self.customView.mapView.removeAnnotations(self.customView.mapView.annotations)
             updateTrackingUI()
+        }
+
+        customView.onCenterTap = { [weak self] in
+            guard let coordinate = self?.viewModel.currentLocation else { return }
+            self?.centerMap(on: coordinate)
         }
 
     }

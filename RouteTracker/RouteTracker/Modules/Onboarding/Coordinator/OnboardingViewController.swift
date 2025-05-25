@@ -35,7 +35,7 @@ final class OnboardingViewController: UIViewController {
 
     private func setupBindings() {
         viewModel.didUpdatePermissionStatus = { [weak self] status in
-            guard let self = self else { return }
+            guard let _ = self else { return }
             guard status == .authorized else { return }
             DispatchQueue.main.async {
                 guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,

@@ -15,10 +15,15 @@ final class MapTrackingView: UIView {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var trackingInfoLabel: UILabel!
-
-
+    @IBOutlet weak var centerUserButton: UIButton!
+  
+    var onCenterTap: (() -> Void)?
     var onStartTap: (() -> Void)?
     var onDeleteTap: (() -> Void)?
+
+    @IBAction func centerUserTapped(_ sender: UIButton) {
+        onCenterTap?()
+    }
 
     @IBAction func startTapped(_ sender: UIButton) {
         onStartTap?()
@@ -59,7 +64,7 @@ final class MapTrackingView: UIView {
 
 
         deleteButton.layer.cornerRadius = 12
-
+        deleteButton.setTitle("", for: .normal)
 
         trackingInfoLabel.layer.cornerRadius = 10
         trackingInfoLabel.clipsToBounds = true
@@ -69,6 +74,17 @@ final class MapTrackingView: UIView {
         trackingInfoLabel.textColor = .black
         trackingInfoLabel.font = .systemFont(ofSize: 14, weight: .medium)
         trackingInfoLabel.text = "Tracking Off\n–"
+
+        centerUserButton.layer.cornerRadius = 12
+        centerUserButton.backgroundColor = .white
+        centerUserButton.setTitle("", for: .normal)
+        centerUserButton.setImage(UIImage(systemName: "location.fill"), for: .normal)
+        centerUserButton.imageView?.contentMode = .scaleAspectFit
+        centerUserButton.contentHorizontalAlignment = .fill
+        centerUserButton.contentVerticalAlignment = .fill
+        centerUserButton.tintColor = .systemBlue
+        centerUserButton.titleEdgeInsets = .zero
+
 
     }
 }

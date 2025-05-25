@@ -12,13 +12,13 @@ protocol MapTrackingViewModelProtocol: AnyObject {
     var onPinAdded: ((CLLocationCoordinate2D) -> Void)? { get set }
     var onAddressUpdated: ((String) -> Void)? { get set }
     var onTrackingStateChanged: ((Bool) -> Void)? { get set }
+    var onInitialLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
+    
     var isCurrentlyTracking: Bool { get }
     var currentLocation: CLLocationCoordinate2D? { get }
-    var onInitialLocation: ((CLLocationCoordinate2D) -> Void)? { get set }
 
     func updateCurrentUserLocationLabel()
-
-
+    func restorePersistedPins()
     func reverseLookup(coordinate: CLLocationCoordinate2D)
     func toggleTracking()
     func deleteAllPins()

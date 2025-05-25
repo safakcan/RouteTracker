@@ -19,8 +19,6 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
     var onInitialLocation: ((CLLocationCoordinate2D) -> Void)?
     private var hasSentInitialLocation = false
 
-
-
     var isCurrentlyTracking: Bool {
         return locationService.isTracking
     }
@@ -28,8 +26,6 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
     var currentLocation: CLLocationCoordinate2D? {
         return locationService.currentLocation?.coordinate
     }
-
-
 
     // MARK: - Dependencies
     private let locationService: LocationServiceProtocol
@@ -54,6 +50,31 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
             self?.handleLocationUpdate(location)
         }
 
+    }
+
+    func toggleTracking() {
+        isTracking.toggle()
+
+        if isTracking {
+            locationService.startTracking()
+        } else {
+            locationService.stopTracking()
+        }
+
+        onTrackingStateChanged?(isTracking)
+    }
+
+
+    func deleteAllPins() {
+        trackedLocations.removeAll()
+        persistence.clear()
+        lastRecordedLocation = nil
+        isTracking = false
+        locationService.stopTracking()
+        onTrackingStateChanged?(false)
+    }
+
+    func restorePersistedPins() {
         self.trackedLocations = persistence.loadCoordinates()
         self.trackedLocations.forEach { coord in
             self.onPinAdded?(coord)
@@ -64,31 +85,22 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
                 self?.onAddressUpdated?("👣 \(address ?? "-")")
             }
         }
-
     }
 
-        func toggleTracking() {
-            isTracking.toggle()
-
-            if isTracking {
-                locationService.startTracking()
-                onTrackingStateChanged?(true)
-            } else {
-                locationService.stopTracking()
-                onTrackingStateChanged?(false)
-            }
-
-
+    func reverseLookup(coordinate: CLLocationCoordinate2D) {
+        geocoder.reverseGeocode(coord: coordinate) { [weak self] address in
+            self?.onAddressUpdated?(address ?? "Unknown")
         }
+    }
 
+    func updateCurrentUserLocationLabel() {
+        guard let current = locationService.currentLocation else { return }
 
-    func deleteAllPins() {
-        trackedLocations.removeAll()
-        persistence.clear()
-        lastRecordedLocation = nil
-        isTracking = false
-        locationService.stopTracking()
-        onTrackingStateChanged?(false)
+        geocoder.reverseGeocode(coord: current.coordinate) { [weak self] address in
+            if let address = address {
+                self?.onAddressUpdated?("👣 \(address)")
+            }
+        }
     }
 
     private func handleLocationUpdate(_ newLocation: CLLocation) {
@@ -109,9 +121,6 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
         updateCurrentUserLocationLabel()
     }
 
-
-
-
     private func save(location: CLLocation) {
         let coord = location.coordinate
         trackedLocations.append(coord)
@@ -123,22 +132,5 @@ final class MapTrackingViewModel: MapTrackingViewModelProtocol {
             self?.onAddressUpdated?(address ?? "Unknown address")
         }
     }
-    
-    func reverseLookup(coordinate: CLLocationCoordinate2D) {
-        geocoder.reverseGeocode(coord: coordinate) { [weak self] address in
-            self?.onAddressUpdated?(address ?? "Unknown")
-        }
-    }
-
-    func updateCurrentUserLocationLabel() {
-        guard let current = locationService.currentLocation else { return }
-
-        geocoder.reverseGeocode(coord: current.coordinate) { [weak self] address in
-            if let address = address {
-                self?.onAddressUpdated?("👣 \(address)")
-            }
-        }
-    }
-
 
 }
