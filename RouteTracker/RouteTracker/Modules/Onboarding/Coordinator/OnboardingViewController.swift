@@ -44,8 +44,15 @@ final class OnboardingViewController: UIViewController {
                       let window = windowScene.windows.first else {
                     return
                 }
+                
 
-                let mapVC = MapTrackingViewController()
+                let viewModel = MapTrackingViewModel(
+                    locationService: LocationService(),
+                    geocoder: ReverseGeocoder(),
+                    persistence: PersistenceManager()
+                )
+
+                let mapVC =  MapTrackingViewController(viewModel: viewModel)
                 window.rootViewController = mapVC
                 UIView.transition(with: window, duration: 0.5, options: [.transitionCrossDissolve], animations: {}, completion: nil)
 

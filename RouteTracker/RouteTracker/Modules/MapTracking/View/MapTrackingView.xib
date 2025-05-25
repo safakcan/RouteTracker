@@ -24,21 +24,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9a-L8-6dP" customClass="MKMapView">
                     <rect key="frame" x="5" y="179" width="383" height="673"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpq-IF-Wd2">
-                            <rect key="frame" x="32" y="604.66666666666663" width="319" height="20.333333333333371"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="Hpq-IF-Wd2" firstAttribute="centerX" secondItem="i9a-L8-6dP" secondAttribute="centerX" id="PX8-C1-gxv"/>
-                        <constraint firstItem="Hpq-IF-Wd2" firstAttribute="leading" secondItem="i9a-L8-6dP" secondAttribute="leading" constant="32" id="QEy-Al-eiq"/>
-                        <constraint firstAttribute="bottom" secondItem="Hpq-IF-Wd2" secondAttribute="bottom" constant="48" id="aN2-DQ-SQp"/>
-                        <constraint firstAttribute="trailing" secondItem="Hpq-IF-Wd2" secondAttribute="trailing" constant="32" id="xs6-nv-dbh"/>
-                    </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                             <integer key="value" value="12"/>
@@ -65,16 +51,26 @@
                         <action selector="deleteTapped:" destination="-1" eventType="touchUpInside" id="IVg-BT-hcQ"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpq-IF-Wd2">
+                    <rect key="frame" x="32" y="747.66666666666663" width="329" height="20.333333333333371"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" systemColor="labelColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="i9a-L8-6dP" secondAttribute="trailing" constant="5" id="45d-C5-WTk"/>
                 <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="120" id="ALw-yU-GFB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Hpq-IF-Wd2" secondAttribute="trailing" constant="32" id="CBZ-Tm-1QU"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="Hpq-IF-Wd2" secondAttribute="bottom" constant="50" id="IVJ-LP-az1"/>
+                <constraint firstItem="Hpq-IF-Wd2" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KlT-vg-nxs"/>
                 <constraint firstItem="i9a-L8-6dP" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="OBT-yx-DcS"/>
                 <constraint firstAttribute="bottom" secondItem="i9a-L8-6dP" secondAttribute="bottom" id="QGO-pR-qez"/>
                 <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="Lr7-ig-2xE" secondAttribute="bottom" constant="5" id="TQQ-a5-aJX"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lr7-ig-2xE" secondAttribute="trailing" constant="5" id="acx-aC-D5w"/>
+                <constraint firstItem="Hpq-IF-Wd2" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="c2F-mO-Jfv"/>
                 <constraint firstItem="tJh-Wu-nNS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="5" id="jyZ-Ah-z0E"/>
                 <constraint firstItem="i9a-L8-6dP" firstAttribute="top" secondItem="tJh-Wu-nNS" secondAttribute="bottom" constant="5" id="znD-1v-c5D"/>
             </constraints>

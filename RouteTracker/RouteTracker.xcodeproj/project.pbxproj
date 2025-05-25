@@ -20,6 +20,14 @@
 		92D26DB72DE26D2D00EF0236 /* MapTrackingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92D26DB62DE26D2D00EF0236 /* MapTrackingView.xib */; };
 		92D26DB92DE26D3B00EF0236 /* MapTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DB82DE26D3B00EF0236 /* MapTrackingView.swift */; };
 		92D26DBB2DE2702000EF0236 /* MapTrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DBA2DE2702000EF0236 /* MapTrackingViewController.swift */; };
+		92D26DBE2DE284FD00EF0236 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DBD2DE284FD00EF0236 /* LocationServiceProtocol.swift */; };
+		92D26DC02DE2850F00EF0236 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DBF2DE2850F00EF0236 /* LocationService.swift */; };
+		92D26DC22DE285A700EF0236 /* MapTrackingViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DC12DE285A700EF0236 /* MapTrackingViewModelProtocol.swift */; };
+		92D26DC42DE285BC00EF0236 /* MapTrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DC32DE285BC00EF0236 /* MapTrackingViewModel.swift */; };
+		92D26DC62DE2861C00EF0236 /* ReverseGeocoderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DC52DE2861C00EF0236 /* ReverseGeocoderProtocol.swift */; };
+		92D26DC82DE2862E00EF0236 /* ReverseGeocoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DC72DE2862E00EF0236 /* ReverseGeocoder.swift */; };
+		92D26DCA2DE2865000EF0236 /* PersistenceManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DC92DE2865000EF0236 /* PersistenceManagerProtocol.swift */; };
+		92D26DCC2DE2866100EF0236 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D26DCB2DE2866100EF0236 /* PersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +46,14 @@
 		92D26DB62DE26D2D00EF0236 /* MapTrackingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTrackingView.xib; sourceTree = "<group>"; };
 		92D26DB82DE26D3B00EF0236 /* MapTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingView.swift; sourceTree = "<group>"; };
 		92D26DBA2DE2702000EF0236 /* MapTrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingViewController.swift; sourceTree = "<group>"; };
+		92D26DBD2DE284FD00EF0236 /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
+		92D26DBF2DE2850F00EF0236 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		92D26DC12DE285A700EF0236 /* MapTrackingViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingViewModelProtocol.swift; sourceTree = "<group>"; };
+		92D26DC32DE285BC00EF0236 /* MapTrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTrackingViewModel.swift; sourceTree = "<group>"; };
+		92D26DC52DE2861C00EF0236 /* ReverseGeocoderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocoderProtocol.swift; sourceTree = "<group>"; };
+		92D26DC72DE2862E00EF0236 /* ReverseGeocoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseGeocoder.swift; sourceTree = "<group>"; };
+		92D26DC92DE2865000EF0236 /* PersistenceManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManagerProtocol.swift; sourceTree = "<group>"; };
+		92D26DCB2DE2866100EF0236 /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +97,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		928D54122DE205B4006F377E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		928D54142DE205B4006F377E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +109,8 @@
 		928D54152DE205B4006F377E /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				92D26DC12DE285A700EF0236 /* MapTrackingViewModelProtocol.swift */,
+				92D26DC32DE285BC00EF0236 /* MapTrackingViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -108,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				928D54112DE205B4006F377E /* Coordinator */,
-				928D54122DE205B4006F377E /* Model */,
 				928D54142DE205B4006F377E /* View */,
 				928D54152DE205B4006F377E /* ViewModel */,
 			);
@@ -199,17 +209,19 @@
 		928D54232DE205B4006F377E /* Geocoding */ = {
 			isa = PBXGroup;
 			children = (
+				92D26DC52DE2861C00EF0236 /* ReverseGeocoderProtocol.swift */,
+				92D26DC72DE2862E00EF0236 /* ReverseGeocoder.swift */,
 			);
 			path = Geocoding;
 			sourceTree = "<group>";
 		};
-		928D54242DE205B4006F377E /* Location */ = {
+		928D54242DE205B4006F377E /* Permission */ = {
 			isa = PBXGroup;
 			children = (
 				928D54382DE222EB006F377E /* PermissionServiceProtocol.swift */,
 				928D543A2DE22303006F377E /* PermissionService.swift */,
 			);
-			path = Location;
+			path = Permission;
 			sourceTree = "<group>";
 		};
 		928D54252DE205B4006F377E /* Networking */ = {
@@ -222,6 +234,8 @@
 		928D54262DE205B4006F377E /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				92D26DC92DE2865000EF0236 /* PersistenceManagerProtocol.swift */,
+				92D26DCB2DE2866100EF0236 /* PersistenceManager.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -229,8 +243,9 @@
 		928D54272DE205B4006F377E /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				92D26DBC2DE284E300EF0236 /* Location */,
 				928D54232DE205B4006F377E /* Geocoding */,
-				928D54242DE205B4006F377E /* Location */,
+				928D54242DE205B4006F377E /* Permission */,
 				928D54252DE205B4006F377E /* Networking */,
 				928D54262DE205B4006F377E /* Storage */,
 			);
@@ -285,6 +300,15 @@
 			);
 			name = SupportingFiles;
 			path = RouteTracker/SupportingFiles;
+			sourceTree = "<group>";
+		};
+		92D26DBC2DE284E300EF0236 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				92D26DBD2DE284FD00EF0236 /* LocationServiceProtocol.swift */,
+				92D26DBF2DE2850F00EF0236 /* LocationService.swift */,
+			);
+			path = Location;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,9 +385,17 @@
 			files = (
 				928D54332DE20A47006F377E /* OnboardingView.swift in Sources */,
 				928D53FE2DE202F4006F377E /* AppDelegate.swift in Sources */,
+				92D26DC62DE2861C00EF0236 /* ReverseGeocoderProtocol.swift in Sources */,
 				928D54392DE222EB006F377E /* PermissionServiceProtocol.swift in Sources */,
+				92D26DC42DE285BC00EF0236 /* MapTrackingViewModel.swift in Sources */,
 				928D543B2DE22303006F377E /* PermissionService.swift in Sources */,
+				92D26DC22DE285A700EF0236 /* MapTrackingViewModelProtocol.swift in Sources */,
+				92D26DBE2DE284FD00EF0236 /* LocationServiceProtocol.swift in Sources */,
 				92D26DBB2DE2702000EF0236 /* MapTrackingViewController.swift in Sources */,
+				92D26DC82DE2862E00EF0236 /* ReverseGeocoder.swift in Sources */,
+				92D26DCA2DE2865000EF0236 /* PersistenceManagerProtocol.swift in Sources */,
+				92D26DCC2DE2866100EF0236 /* PersistenceManager.swift in Sources */,
+				92D26DC02DE2850F00EF0236 /* LocationService.swift in Sources */,
 				92D26DB92DE26D3B00EF0236 /* MapTrackingView.swift in Sources */,
 				928D54372DE20AAE006F377E /* OnboardingViewController.swift in Sources */,
 				928D54002DE202F4006F377E /* SceneDelegate.swift in Sources */,
